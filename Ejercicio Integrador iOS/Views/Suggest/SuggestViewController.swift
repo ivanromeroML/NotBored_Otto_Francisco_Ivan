@@ -9,13 +9,20 @@ import UIKit
 
 class SuggestViewController: UIViewController {
     
+    @IBOutlet weak var suggestTitle: UILabel!
     @IBOutlet weak var participantsNumber: UILabel!
     @IBOutlet weak var price: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     @IBAction func tryAnotherButton(_ sender: Any) {
+        
     }
     
+    func getTitle(){}
+    func getParticipants(){}
+    func getPrice(){}
+
 }
