@@ -19,6 +19,8 @@
 		5DF74E5B284C0EF6001087E0 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF74E59284C0EF6001087E0 /* ActivitiesViewController.swift */; };
 		5DF74E5C284C0EF6001087E0 /* ActivitiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DF74E5A284C0EF6001087E0 /* ActivitiesViewController.xib */; };
 		5DF74E5E284C14F1001087E0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF74E5D284C14F1001087E0 /* TabBarController.swift */; };
+		E85B3245284EA26300002221 /* SuggestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85B3243284EA26300002221 /* SuggestViewController.swift */; };
+		E85B3246284EA26300002221 /* SuggestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85B3244284EA26300002221 /* SuggestViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		5DF74E59284C0EF6001087E0 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		5DF74E5A284C0EF6001087E0 /* ActivitiesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivitiesViewController.xib; sourceTree = "<group>"; };
 		5DF74E5D284C14F1001087E0 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		E85B3243284EA26300002221 /* SuggestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestViewController.swift; sourceTree = "<group>"; };
+		E85B3244284EA26300002221 /* SuggestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,14 +103,48 @@
 		5DF74E52284BEF9F001087E0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5DF74E36284A50F1001087E0 /* StartViewController.swift */,
-				5DF74E37284A50F1001087E0 /* StartViewController.xib */,
-				5DF74E53284BFB09001087E0 /* TermViewController.swift */,
-				5DF74E54284BFB09001087E0 /* TermViewController.xib */,
+				E85B3242284EA24500002221 /* Suggest */,
+				E85B3241284EA23E00002221 /* Start */,
+				E85B3240284EA23500002221 /* Term */,
+				E85B323F284EA22D00002221 /* Activities */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E85B323F284EA22D00002221 /* Activities */ = {
+			isa = PBXGroup;
+			children = (
 				5DF74E59284C0EF6001087E0 /* ActivitiesViewController.swift */,
 				5DF74E5A284C0EF6001087E0 /* ActivitiesViewController.xib */,
 			);
-			path = Views;
+			path = Activities;
+			sourceTree = "<group>";
+		};
+		E85B3240284EA23500002221 /* Term */ = {
+			isa = PBXGroup;
+			children = (
+				5DF74E53284BFB09001087E0 /* TermViewController.swift */,
+				5DF74E54284BFB09001087E0 /* TermViewController.xib */,
+			);
+			path = Term;
+			sourceTree = "<group>";
+		};
+		E85B3241284EA23E00002221 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				5DF74E36284A50F1001087E0 /* StartViewController.swift */,
+				5DF74E37284A50F1001087E0 /* StartViewController.xib */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		E85B3242284EA24500002221 /* Suggest */ = {
+			isa = PBXGroup;
+			children = (
+				E85B3243284EA26300002221 /* SuggestViewController.swift */,
+				E85B3244284EA26300002221 /* SuggestViewController.xib */,
+			);
+			path = Suggest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DF74E5C284C0EF6001087E0 /* ActivitiesViewController.xib in Resources */,
+				E85B3246284EA26300002221 /* SuggestViewController.xib in Resources */,
 				5DF74E2F284A49AB001087E0 /* LaunchScreen.storyboard in Resources */,
 				5DF74E39284A50F1001087E0 /* StartViewController.xib in Resources */,
 				5DF74E56284BFB09001087E0 /* TermViewController.xib in Resources */,
@@ -189,6 +228,7 @@
 				5DF74E5E284C14F1001087E0 /* TabBarController.swift in Sources */,
 				5DF74E23284A49AA001087E0 /* AppDelegate.swift in Sources */,
 				5DF74E25284A49AA001087E0 /* SceneDelegate.swift in Sources */,
+				E85B3245284EA26300002221 /* SuggestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
