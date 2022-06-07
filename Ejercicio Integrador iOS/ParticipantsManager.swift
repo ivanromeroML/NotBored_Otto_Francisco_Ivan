@@ -12,7 +12,7 @@ class ParticipantsManager {
     static let shared = ParticipantsManager()
     
     var participants: Int?
+    var activities: String?
     
-    init(){
-    }
+    init(){}
 }

@@ -11,28 +11,8 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let activitiesTabTitle = "Activities"
-//        let activitiesTabImage = UIImage(systemName: "list.dash")
-//
-//        let activitiesViewController = ActivitiesViewController(nibName: "ActivitiesViewController", bundle: nil)
-//
-//        activitiesViewController.title = activitiesTabTitle
-//        activitiesViewController.tabBarItem = UITabBarItem(title: "Activities", image: activitiesTabImage, selectedImage: nil)
-//
-        
-        
-        
-        
-        
-        
         let activitiesNavigationController = addView(tabTitle: "Activities", tabImageName: "list.dash", viewController: ActivitiesViewController.self)
-        
         let suggestNavigationController = addView(tabTitle: "Random", tabImageName: "shuffle", viewController: SuggestViewController.self)
-        
-        
-        
-        
         viewControllers = [activitiesNavigationController, suggestNavigationController]
     }
     
@@ -40,12 +20,12 @@ class TabBarController: UITabBarController {
         
         let nibName = viewController.description().components(separatedBy: ".").last
         
-        let ViewController = viewController.init(nibName: nibName, bundle: nil)
+        let vc = viewController.init(nibName: nibName, bundle: nil)
 
-        ViewController.title = tabTitle
-        ViewController.tabBarItem = UITabBarItem(title: tabTitle, image: UIImage(systemName: tabImageName), selectedImage: nil)
+        vc.title = tabTitle
+        vc.tabBarItem = UITabBarItem(title: tabTitle, image: UIImage(systemName: tabImageName), selectedImage: nil)
 
-        let navigationController = UINavigationController(rootViewController: ViewController)
+        let navigationController = UINavigationController(rootViewController: vc)
 
         return navigationController
 
