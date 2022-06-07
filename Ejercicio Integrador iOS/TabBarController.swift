@@ -38,7 +38,9 @@ class TabBarController: UITabBarController {
     
     private func addView <T: UIViewController>(tabTitle: String, tabImageName: String, viewController: T.Type) -> UINavigationController {
         
-        let ViewController = viewController.init(nibName: "\(viewController)", bundle: nil)
+        let nibName = viewController.description().components(separatedBy: ".").last
+        
+        let ViewController = viewController.init(nibName: nibName, bundle: nil)
 
         ViewController.title = tabTitle
         ViewController.tabBarItem = UITabBarItem(title: tabTitle, image: UIImage(systemName: tabImageName), selectedImage: nil)
