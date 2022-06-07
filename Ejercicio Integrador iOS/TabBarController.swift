@@ -28,12 +28,12 @@ class TabBarController: UITabBarController {
         
         let activitiesNavigationController = addView(tabTitle: "Activities", tabImageName: "list.dash", viewController: ActivitiesViewController.self)
         
+        let suggestNavigationController = addView(tabTitle: "Random", tabImageName: "shuffle", viewController: SuggestViewController.self)
         
         
         
         
-        
-        viewControllers = [activitiesNavigationController]
+        viewControllers = [activitiesNavigationController, suggestNavigationController]
     }
     
     private func addView <T: UIViewController>(tabTitle: String, tabImageName: String, viewController: T.Type) -> UINavigationController {
