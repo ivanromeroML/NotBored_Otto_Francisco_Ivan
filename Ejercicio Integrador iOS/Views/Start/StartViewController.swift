@@ -24,7 +24,7 @@ class StartViewController: UIViewController {
         if textField.hasText {
             let participants: Int? = Int(textField.text!)
             
-            if let number = participants {
+            if let number = participants, number > 0{
                 goToTabBar()
             } else {
                 callAlert()

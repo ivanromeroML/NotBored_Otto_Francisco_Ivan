@@ -8,8 +8,13 @@
 import Foundation
 
 class ActivitiesViewModel {
-    let listActivities: [String] = ["Education", "Recreational", "Social", "Diy", "Charity", "Cooking", "Relaxation", "Music", "Busywork"]
+    let listActivities: [String]
     
     init(){
+        self.listActivities = Activities.allCases.map({$0.rawValue})
     }
+}
+
+enum Activities: String, CaseIterable {
+    case Education, Recreational, Social, Diy, Charity, Cooking, Relaxation, Music, Busywork
 }
