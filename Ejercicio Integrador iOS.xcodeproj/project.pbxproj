@@ -21,6 +21,7 @@
 		5DF74E5E284C14F1001087E0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF74E5D284C14F1001087E0 /* TabBarController.swift */; };
 		5DF74E64284FA512001087E0 /* ParticipantsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF74E63284FA512001087E0 /* ParticipantsManager.swift */; };
 		CD5069D2284FA64D0042B18D /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5069D1284FA64D0042B18D /* EventModel.swift */; };
+		CD5069D5284FE7940042B18D /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5069D4284FE7940042B18D /* Provider.swift */; };
 		E85B3245284EA26300002221 /* SuggestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85B3243284EA26300002221 /* SuggestViewController.swift */; };
 		E85B3246284EA26300002221 /* SuggestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85B3244284EA26300002221 /* SuggestViewController.xib */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		5DF74E5D284C14F1001087E0 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		5DF74E63284FA512001087E0 /* ParticipantsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsManager.swift; sourceTree = "<group>"; };
 		CD5069D1284FA64D0042B18D /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		CD5069D4284FE7940042B18D /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		E85B3243284EA26300002221 /* SuggestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestViewController.swift; sourceTree = "<group>"; };
 		E85B3244284EA26300002221 /* SuggestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +81,7 @@
 				CD5069D0284FA6200042B18D /* Model */,
 				5DF74E51284BEF93001087E0 /* ViewModel */,
 				5DF74E52284BEF9F001087E0 /* Views */,
+				CD5069D3284FE7540042B18D /* Network */,
 				5DF74E22284A49AA001087E0 /* AppDelegate.swift */,
 				5DF74E24284A49AA001087E0 /* SceneDelegate.swift */,
 				5DF74E5D284C14F1001087E0 /* TabBarController.swift */,
@@ -115,6 +118,14 @@
 				CD5069D1284FA64D0042B18D /* EventModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CD5069D3284FE7540042B18D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CD5069D4284FE7940042B18D /* Provider.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		E85B323F284EA22D00002221 /* Activities */ = {
@@ -236,6 +247,7 @@
 				5DF74E23284A49AA001087E0 /* AppDelegate.swift in Sources */,
 				5DF74E25284A49AA001087E0 /* SceneDelegate.swift in Sources */,
 				5DF74E64284FA512001087E0 /* ParticipantsManager.swift in Sources */,
+				CD5069D5284FE7940042B18D /* Provider.swift in Sources */,
 				E85B3245284EA26300002221 /* SuggestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
