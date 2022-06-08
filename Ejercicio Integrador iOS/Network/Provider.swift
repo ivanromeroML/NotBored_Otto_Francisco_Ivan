@@ -12,7 +12,9 @@ final class EventProvider {
     
     func getInfoActivities(_ completion: @escaping (EventM) -> Void) {
         
-        guard let url: URL = URL(string: "http://www.boredapi.com/api/activity?type=recreational&participants=1") else {
+        let urlCase: String = getUrl()
+        
+        guard let url: URL = URL(string: urlCase) else {
             preconditionFailure("Invalid URL string")
         }
         
@@ -42,5 +44,17 @@ final class EventProvider {
         task.resume()
     }
     
+    private func getUrl() -> String {
+        switch (ParticipantsManager.shared.participants,ParticipantsManager.shared.activities){
+        case (.none,.none):
+            return "http://www.boredapi.com/api/activity/"
+        case (.some(let participants), .none):
+            return "http://www.boredapi.com/api/activity?participants=\(participants)"
+        case (.none, .some(let activity)):
+            return "http://www.boredapi.com/api/activity?type=\(activity)"
+        case (.some(let participants), .some(let activity)):
+            return "http://www.boredapi.com/api/activity?type=\(activity)&participants=\(participants)"
+        }
+    }
 }
 
