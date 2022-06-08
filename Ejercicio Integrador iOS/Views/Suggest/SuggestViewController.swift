@@ -24,7 +24,6 @@ class SuggestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel = SuggestViewModel(service: service, delegate: self)
-        self.viewModel?.getCategory()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
