@@ -61,6 +61,8 @@ extension ActivitiesViewController: UITableViewDelegate {
     func showSuggest(at index: Int) {
         let suggestViewController = SuggestViewController()
         suggestViewController.title = viewModel.getActivity(at: index)
-        navigationController?.pushViewController(suggestViewController, animated: true)
+        let navigationController  = UINavigationController(rootViewController: suggestViewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        self.present(navigationController, animated: true)
     }
 }

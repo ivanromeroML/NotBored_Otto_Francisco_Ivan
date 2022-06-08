@@ -107,8 +107,8 @@
 		5DF74E52284BEF9F001087E0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E85B3241284EA23E00002221 /* Start */,
 				E85B3242284EA24500002221 /* Suggest */,
+				E85B3241284EA23E00002221 /* Start */,
 				E85B3240284EA23500002221 /* Term */,
 				E85B323F284EA22D00002221 /* Activities */,
 			);
