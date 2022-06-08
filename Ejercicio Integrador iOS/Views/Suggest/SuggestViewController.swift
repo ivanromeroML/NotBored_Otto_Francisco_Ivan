@@ -7,36 +7,38 @@
 
 import UIKit
 
+protocol SuggestDelegate {
+    func loadData(category: EventM)
+}
+
 class SuggestViewController: UIViewController {
     
     @IBOutlet weak var suggestTitle: UILabel!
     @IBOutlet weak var participantsNumber: UILabel!
     @IBOutlet weak var price: UILabel!
     
-    var viewModel: SuggestViewModel?
+    private var viewModel: SuggestViewModel?
+    private let service = EventProvider()
+    private var participants = ParticipantsManager.shared.participants ?? 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel = SuggestViewModel(service: SuggestService())
+        self.viewModel = SuggestViewModel(service: service, delegate: self)
+        self.viewModel?.getCategory()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        ParticipantsManager.shared.activities = nil
+      }
     
     @IBAction func tryAnotherButton(_ sender: Any) {
     }
-    
-    //MARK: Price
-    func getPrice(price: Double) -> String {
-        switch price {
-        case 0:
-            return "Free"
-        case 0.1...0.3:
-            return "Low"
-        case 0.3...0.6:
-            return "Medium"
-        case 0.7...0.9 :
-            return "High"
-        default:
-            return "Free"
-        }
-    }
+}
 
+extension SuggestViewController: SuggestDelegate {
+    func loadData(category: EventM) {
+        self.suggestTitle.text = category.activity
+        self.price.text = String(category.price)
+        self.participantsNumber.text = String(participants)
+    }
 }
