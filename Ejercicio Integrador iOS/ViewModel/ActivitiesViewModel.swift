@@ -18,5 +18,5 @@ class ActivitiesViewModel {
 }
 
 enum Activities: String, CaseIterable {
-    case education, recreational, social, diy, charity, cooking, relaxation, music, busywork
+    case Education, Recreational, Social, Diy, Charity, Cooking, Relaxation, Music, Busywork
 }

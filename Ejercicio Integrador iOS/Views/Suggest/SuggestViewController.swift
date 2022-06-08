@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SuggestDelegate {
-    func loadData()
+    func showData(category: EventM)
 }
 
 class SuggestViewController: UIViewController {
@@ -26,30 +26,31 @@ class SuggestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel = SuggestViewModel(service: service, delegate: self)
-        loadData()
-
+        self.viewModel?.loadData()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         ParticipantsManager.shared.activities = nil
       }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if ParticipantsManager.shared.activities == nil {
+          self.viewModel?.loadData()
+        }
+      }
+    
     @IBAction func tryAnotherButton(_ sender: Any) {
+        self.viewModel?.loadData()
     }
 }
 
 extension SuggestViewController: SuggestDelegate {
-    func loadData() {
-        service.getInfoActivities { activityInfo in
-            DispatchQueue.main.async { [weak self] in
-                guard let strongSelf = self else {
-                    return
-                }
-                strongSelf.testActivity = activityInfo
-                self.suggestTitle.text = testActivity?.activity
-                self.price.text = ""
-                self.participantsNumber.text = ""
-            }
+    func showData(category: EventM) {
+        DispatchQueue.main.async {
+            self.suggestTitle.text = self.viewModel?.testActivity?.activity
+            self.price.text = self.viewModel?.getPrice(price: (self.viewModel?.testActivity?.price)!)
+            self.participantsNumber.text = String(self.participants)
         }
+
     }
 }
