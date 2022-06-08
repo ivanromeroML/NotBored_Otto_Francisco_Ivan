@@ -20,6 +20,7 @@
 		5DF74E5C284C0EF6001087E0 /* ActivitiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DF74E5A284C0EF6001087E0 /* ActivitiesViewController.xib */; };
 		5DF74E5E284C14F1001087E0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF74E5D284C14F1001087E0 /* TabBarController.swift */; };
 		5DF74E64284FA512001087E0 /* ParticipantsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF74E63284FA512001087E0 /* ParticipantsManager.swift */; };
+		CD5069D2284FA64D0042B18D /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5069D1284FA64D0042B18D /* EventModel.swift */; };
 		E85B3245284EA26300002221 /* SuggestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85B3243284EA26300002221 /* SuggestViewController.swift */; };
 		E85B3246284EA26300002221 /* SuggestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85B3244284EA26300002221 /* SuggestViewController.xib */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		5DF74E5A284C0EF6001087E0 /* ActivitiesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivitiesViewController.xib; sourceTree = "<group>"; };
 		5DF74E5D284C14F1001087E0 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		5DF74E63284FA512001087E0 /* ParticipantsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsManager.swift; sourceTree = "<group>"; };
+		CD5069D1284FA64D0042B18D /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		E85B3243284EA26300002221 /* SuggestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestViewController.swift; sourceTree = "<group>"; };
 		E85B3244284EA26300002221 /* SuggestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,7 +76,7 @@
 		5DF74E21284A49AA001087E0 /* Ejercicio Integrador iOS */ = {
 			isa = PBXGroup;
 			children = (
-				5DF74E50284BEF8C001087E0 /* Model */,
+				CD5069D0284FA6200042B18D /* Model */,
 				5DF74E51284BEF93001087E0 /* ViewModel */,
 				5DF74E52284BEF9F001087E0 /* Views */,
 				5DF74E22284A49AA001087E0 /* AppDelegate.swift */,
@@ -86,13 +88,6 @@
 				5DF74E30284A49AB001087E0 /* Info.plist */,
 			);
 			path = "Ejercicio Integrador iOS";
-			sourceTree = "<group>";
-		};
-		5DF74E50284BEF8C001087E0 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		5DF74E51284BEF93001087E0 /* ViewModel */ = {
@@ -112,6 +107,14 @@
 				E85B323F284EA22D00002221 /* Activities */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CD5069D0284FA6200042B18D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD5069D1284FA64D0042B18D /* EventModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E85B323F284EA22D00002221 /* Activities */ = {
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DF74E55284BFB09001087E0 /* TermViewController.swift in Sources */,
+				CD5069D2284FA64D0042B18D /* EventModel.swift in Sources */,
 				5DF74E38284A50F1001087E0 /* StartViewController.swift in Sources */,
 				5DF74E5B284C0EF6001087E0 /* ActivitiesViewController.swift in Sources */,
 				5DF74E58284C0D88001087E0 /* ActivitiesViewModel.swift in Sources */,
