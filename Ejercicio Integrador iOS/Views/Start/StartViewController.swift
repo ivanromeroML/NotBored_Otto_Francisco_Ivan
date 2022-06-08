@@ -11,8 +11,20 @@ class StartViewController: UIViewController {
 
     @IBOutlet weak var textField: UITextField!
     
+    private var activityTest: EventM?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let provider: EventProvider = EventProvider()
+        provider.getInfoActivities { activityT in
+            DispatchQueue.main.async { [weak self] in
+                guard let strongSelf = self else {
+                    return
+                }
+                strongSelf.activityTest = activityT
+            }
+        }
     }
     
     //MARK: Start Button

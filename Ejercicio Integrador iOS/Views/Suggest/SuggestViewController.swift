@@ -17,7 +17,7 @@ class SuggestViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel = SuggestViewModel(service: SuggestService())
+//        self.viewModel = SuggestViewModel(service: SuggestService())
     }
     
     @IBAction func tryAnotherButton(_ sender: Any) {
