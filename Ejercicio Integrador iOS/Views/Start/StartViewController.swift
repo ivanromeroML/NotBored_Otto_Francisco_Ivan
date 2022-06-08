@@ -26,6 +26,8 @@ class StartViewController: UIViewController {
             } else {
                 callAlert()
             }
+        } else {
+            goToView(TabBarController.self)
         }
     }
     
