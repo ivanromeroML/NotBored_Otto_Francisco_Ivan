@@ -9,8 +9,10 @@ import Foundation
 
 class SuggestViewModel{
     let delegate: SuggestDelegate
+    let service: EventProvider
     
     init (service: EventProvider, delegate: SuggestDelegate) {
+        self.service = service
         self.delegate = delegate
     }
     
