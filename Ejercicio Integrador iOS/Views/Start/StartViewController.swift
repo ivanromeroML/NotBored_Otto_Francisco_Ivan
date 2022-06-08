@@ -13,7 +13,7 @@ class StartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
     //MARK: Start Button
     
     @IBAction func startButton(_ sender: Any) {
