@@ -12,7 +12,7 @@ final class EventProvider {
     
     func getInfoActivities(_ completion: @escaping (EventM) -> Void) {
         
-        guard let url: URL = URL(string: "https://www.boredapi.com/api/activity?type=recreational&participants=1") else {
+        guard let url: URL = URL(string: "http://www.boredapi.com/api/activity?type=recreational&participants=1") else {
             preconditionFailure("Invalid URL string")
         }
         
@@ -22,14 +22,15 @@ final class EventProvider {
         let session: URLSession = URLSession(configuration: configuration)
         
         let task: URLSessionDataTask = session.dataTask(with: request) { (data, _, error) in
-            guard error == nil, let data = data else {
+            guard error == nil, let dataModel = data else {
                 preconditionFailure("Task error \(error?.localizedDescription ?? "")")
             }
-            
             do {
                 
                 let decoder: JSONDecoder = JSONDecoder()
-                let activity: EventM = try decoder.decode(EventM.self, from: data)
+                let activity: EventM = try decoder.decode(EventM.self, from: dataModel)
+                print(activity.type)
+                print(activity.accessibility)
                 return completion(activity)
                 
             } catch {

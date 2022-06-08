@@ -14,8 +14,8 @@ struct EventM: Decodable {
     let activity: String
     let type: String
     let participants: Int
-    let price: Int
+    let price: Double
     let link: String
     let key: String
-    let accessibility: Float
+    let accessibility: Double
 }
