@@ -40,7 +40,7 @@ class StartViewController: UIViewController {
     
     //MARK: Functions
     private func callAlert(){
-        let alert = UIAlertController(title: "Error", message: "Por favor Ingrese un numero correcto", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Error", message: "Please insert a valid number", preferredStyle: .actionSheet)
         let alertAction = UIAlertAction(title: "Ok", style: .default) { UIAlertAction in
             self.textField.text = ""
         }
