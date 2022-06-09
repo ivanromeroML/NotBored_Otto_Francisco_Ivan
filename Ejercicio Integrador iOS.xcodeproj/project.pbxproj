@@ -19,8 +19,13 @@
 		5DF74E5B284C0EF6001087E0 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF74E59284C0EF6001087E0 /* ActivitiesViewController.swift */; };
 		5DF74E5C284C0EF6001087E0 /* ActivitiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DF74E5A284C0EF6001087E0 /* ActivitiesViewController.xib */; };
 		5DF74E5E284C14F1001087E0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF74E5D284C14F1001087E0 /* TabBarController.swift */; };
+		5DF74E64284FA512001087E0 /* ParticipantsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF74E63284FA512001087E0 /* ParticipantsManager.swift */; };
+		CD5069D2284FA64D0042B18D /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5069D1284FA64D0042B18D /* EventModel.swift */; };
+		CD5069D5284FE7940042B18D /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5069D4284FE7940042B18D /* Provider.swift */; };
 		E85B3245284EA26300002221 /* SuggestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85B3243284EA26300002221 /* SuggestViewController.swift */; };
 		E85B3246284EA26300002221 /* SuggestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85B3244284EA26300002221 /* SuggestViewController.xib */; };
+		E85B3248284F934F00002221 /* SuggestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85B3247284F934F00002221 /* SuggestViewModel.swift */; };
+		E88FF8B62852593000B98841 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88FF8B52852593000B98841 /* Spinner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +43,13 @@
 		5DF74E59284C0EF6001087E0 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		5DF74E5A284C0EF6001087E0 /* ActivitiesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivitiesViewController.xib; sourceTree = "<group>"; };
 		5DF74E5D284C14F1001087E0 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		5DF74E63284FA512001087E0 /* ParticipantsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsManager.swift; sourceTree = "<group>"; };
+		CD5069D1284FA64D0042B18D /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		CD5069D4284FE7940042B18D /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		E85B3243284EA26300002221 /* SuggestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestViewController.swift; sourceTree = "<group>"; };
 		E85B3244284EA26300002221 /* SuggestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestViewController.xib; sourceTree = "<group>"; };
+		E85B3247284F934F00002221 /* SuggestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestViewModel.swift; sourceTree = "<group>"; };
+		E88FF8B52852593000B98841 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,12 +82,14 @@
 		5DF74E21284A49AA001087E0 /* Ejercicio Integrador iOS */ = {
 			isa = PBXGroup;
 			children = (
-				5DF74E50284BEF8C001087E0 /* Model */,
+				CD5069D0284FA6200042B18D /* Model */,
 				5DF74E51284BEF93001087E0 /* ViewModel */,
 				5DF74E52284BEF9F001087E0 /* Views */,
+				CD5846032852AA2E00976A18 /* Manager */,
+				E88FF8B42852591500B98841 /* Extensions */,
+				CD5069D3284FE7540042B18D /* Network */,
 				5DF74E22284A49AA001087E0 /* AppDelegate.swift */,
 				5DF74E24284A49AA001087E0 /* SceneDelegate.swift */,
-				5DF74E5D284C14F1001087E0 /* TabBarController.swift */,
 				5DF74E2B284A49AB001087E0 /* Assets.xcassets */,
 				5DF74E2D284A49AB001087E0 /* LaunchScreen.storyboard */,
 				5DF74E30284A49AB001087E0 /* Info.plist */,
@@ -85,17 +97,11 @@
 			path = "Ejercicio Integrador iOS";
 			sourceTree = "<group>";
 		};
-		5DF74E50284BEF8C001087E0 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		5DF74E51284BEF93001087E0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				5DF74E57284C0D88001087E0 /* ActivitiesViewModel.swift */,
+				E85B3247284F934F00002221 /* SuggestViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -103,12 +109,45 @@
 		5DF74E52284BEF9F001087E0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E85B3242284EA24500002221 /* Suggest */,
+				CD5846022852AA1400976A18 /* TabBar */,
 				E85B3241284EA23E00002221 /* Start */,
+				E85B3242284EA24500002221 /* Suggest */,
 				E85B3240284EA23500002221 /* Term */,
 				E85B323F284EA22D00002221 /* Activities */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CD5069D0284FA6200042B18D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD5069D1284FA64D0042B18D /* EventModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD5069D3284FE7540042B18D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CD5069D4284FE7940042B18D /* Provider.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CD5846022852AA1400976A18 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				5DF74E5D284C14F1001087E0 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		CD5846032852AA2E00976A18 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				5DF74E63284FA512001087E0 /* ParticipantsManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		E85B323F284EA22D00002221 /* Activities */ = {
@@ -145,6 +184,14 @@
 				E85B3244284EA26300002221 /* SuggestViewController.xib */,
 			);
 			path = Suggest;
+			sourceTree = "<group>";
+		};
+		E88FF8B42852591500B98841 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E88FF8B52852593000B98841 /* Spinner.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,12 +269,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DF74E55284BFB09001087E0 /* TermViewController.swift in Sources */,
+				CD5069D2284FA64D0042B18D /* EventModel.swift in Sources */,
 				5DF74E38284A50F1001087E0 /* StartViewController.swift in Sources */,
 				5DF74E5B284C0EF6001087E0 /* ActivitiesViewController.swift in Sources */,
+				E88FF8B62852593000B98841 /* Spinner.swift in Sources */,
 				5DF74E58284C0D88001087E0 /* ActivitiesViewModel.swift in Sources */,
+				E85B3248284F934F00002221 /* SuggestViewModel.swift in Sources */,
 				5DF74E5E284C14F1001087E0 /* TabBarController.swift in Sources */,
 				5DF74E23284A49AA001087E0 /* AppDelegate.swift in Sources */,
 				5DF74E25284A49AA001087E0 /* SceneDelegate.swift in Sources */,
+				5DF74E64284FA512001087E0 /* ParticipantsManager.swift in Sources */,
+				CD5069D5284FE7940042B18D /* Provider.swift in Sources */,
 				E85B3245284EA26300002221 /* SuggestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

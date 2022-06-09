@@ -9,44 +9,38 @@ import UIKit
 
 class StartViewController: UIViewController {
 
+    //Outlets
     @IBOutlet weak var textField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
     //MARK: Start Button
     
     @IBAction func startButton(_ sender: Any) {
-        
         if textField.hasText {
             let participants: Int? = Int(textField.text!)
             
             if let number = participants, number > 0{
-                goToTabBar()
+                ParticipantsManager.shared.participants = number
+                goToView(TabBarController.self)
             } else {
                 callAlert()
             }
-            
         } else {
-            
+            goToView(TabBarController.self)
         }
-        
     }
     
     //MARK: Terms And Conditions Button
     
     @IBAction func termsButton(_ sender: Any) {
-        let termsVC = TermViewController()
-        termsVC.modalPresentationStyle = .overFullScreen
-        self.present(termsVC, animated: true)
+        goToView(TermViewController.self)
     }
     
-    //MARK: funciones
-    func callAlert(){
-        let alert = UIAlertController(title: "Error", message: "Por favor Ingrese un numero correcto", preferredStyle: .actionSheet)
+    //MARK: Functions
+    private func callAlert(){
+        let alert = UIAlertController(title: "Error", message: "Please insert a valid number", preferredStyle: .actionSheet)
         let alertAction = UIAlertAction(title: "Ok", style: .default) { UIAlertAction in
             self.textField.text = ""
         }
@@ -54,8 +48,8 @@ class StartViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
-    func goToTabBar(){
-        let vc = TabBarController()
+    private func goToView <T: UIViewController>(_ viewController: T.Type){
+        let vc = viewController.init()
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true)
     }

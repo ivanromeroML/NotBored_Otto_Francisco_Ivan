@@ -10,8 +10,10 @@ import Foundation
 class ActivitiesViewModel {
     let listActivities: [String]
     
-    init(){
-        self.listActivities = Activities.allCases.map({$0.rawValue})
+    init(){ self.listActivities = Activities.allCases.map({$0.rawValue}) }
+    
+    func getActivity(at index: Int)-> String{
+        listActivities[index]
     }
 }
 
