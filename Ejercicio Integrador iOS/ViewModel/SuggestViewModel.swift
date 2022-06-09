@@ -22,6 +22,7 @@ class SuggestViewModel{
         service.getInfoActivities { activity in
             self.testActivity = activity
             self.delegate.showData(category: activity)
+            self.delegate.spinnerLoadingState(state: false)
             }
     }
     
