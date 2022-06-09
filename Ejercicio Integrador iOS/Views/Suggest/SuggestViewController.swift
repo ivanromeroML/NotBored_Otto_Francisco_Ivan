@@ -56,10 +56,6 @@ extension SuggestViewController: SuggestDelegate {
     }
     
     func spinnerLoadingState(state: Bool) {
-        if state == true {
-            return self.showSpinner(onView: self.view)
-        } else {
-            return self.removeSpinner()
-        }
+        state ? self.showSpinner(onView: self.view) : self.removeSpinner()
     }
 }
