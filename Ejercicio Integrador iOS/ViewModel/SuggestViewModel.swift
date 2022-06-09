@@ -35,7 +35,6 @@ class SuggestViewModel{
         }
     }
     
-    
     //MARK: Price
     func getPrice(price: Double) -> String {
         switch price {
