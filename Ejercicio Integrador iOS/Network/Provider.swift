@@ -10,7 +10,14 @@ import Foundation
 // MARK: EventProvider class
 final class EventProvider {
     
-    func getInfoActivities(_ completion: @escaping (EventM) -> Void) {
+    enum CustomError: Error {
+        case invalidUrl
+        case invalidData
+    }
+    
+    func getInfoActivities(_ completion: @escaping (Result<EventM, Error>) -> Void) {
+        
+        
         
         let urlCase: String = getUrl()
         
@@ -25,19 +32,25 @@ final class EventProvider {
         
         let task: URLSessionDataTask = session.dataTask(with: request) { (data, _, error) in
             guard error == nil, let dataModel = data else {
-                preconditionFailure("Task error \(error?.localizedDescription ?? "")")
+//                preconditionFailure("Task error \(error?.localizedDescription ?? "")")
+                if let error = error {
+                    completion(.failure(error))
+                } else {
+                    completion(.failure(CustomError.invalidData))
+                }
+                return
             }
             do {
                 
                 let decoder: JSONDecoder = JSONDecoder()
                 let activity: EventM = try decoder.decode(EventM.self, from: dataModel)
                 print(activity.activity)
-                print(activity.accessibility)
-                return completion(activity)
+                print(activity.price)
+                return completion(.success(activity))
                 
             } catch {
-                
-                preconditionFailure(error.localizedDescription)
+                completion(.failure(error))
+//                preconditionFailure(error.localizedDescription)
                 
             }
         }

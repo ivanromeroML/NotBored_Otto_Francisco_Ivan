@@ -19,24 +19,33 @@ class SuggestViewModel{
     
     //MARK: Data
     func loadData(){
-        service.getInfoActivities { activity in
-            self.testActivity = activity
-            self.delegate.showData(category: activity)
-            self.delegate.spinnerLoadingState(state: false)
+        service.getInfoActivities { [weak self] result in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                switch result {
+                case .success(let resultActivity):
+                    self.testActivity = resultActivity
+                    self.delegate.showData()
+                    self.delegate.spinnerLoadingState(state: false)
+                case .failure(let error):
+                    self.delegate.showData()
+                    self.delegate.spinnerLoadingState(state: false)
+                }
             }
+        }
     }
     
     
     //MARK: Price
-     func getPrice(price: Double) -> String {
+    func getPrice(price: Double) -> String {
         switch price {
         case 0:
             return "Free"
-        case 0.1...0.3:
+        case 0..<0.4:
             return "Low"
-        case 0.3...0.6:
+        case 0.4..<0.7:
             return "Medium"
-        case 0.7...0.9 :
+        case 0.7... :
             return "High"
         default:
             return "Free"
