@@ -24,6 +24,8 @@ class ActivitiesViewController: UIViewController {
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.tableView.rowHeight = 75
         self.tableView.reloadData()
+        self.tableView.layoutMargins = .init(top: 0.0, left: 25.0, bottom: 0.0, right: 25.0)
+        self.tableView.separatorInset = tableView.layoutMargins
     }
 }
 
@@ -46,6 +48,7 @@ extension ActivitiesViewController: UITableViewDataSource {
         cell.backgroundColor = UIColor(red: 224, green: 245, blue: 254, alpha: 0)
         cell.accessoryType = .disclosureIndicator
         cell.textLabel?.font = UIFont.systemFont(ofSize: 25.0)
+        
     }
 }
 
@@ -61,6 +64,7 @@ extension ActivitiesViewController: UITableViewDelegate {
     func showSuggest(at index: Int) {
         let suggestViewController = SuggestViewController()
         suggestViewController.title = viewModel.getActivity(at: index)
+        suggestViewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(suggestViewController, animated: true)
     }
 }
