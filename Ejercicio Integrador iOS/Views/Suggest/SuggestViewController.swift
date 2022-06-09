@@ -9,6 +9,7 @@ import UIKit
 
 protocol SuggestDelegate {
     func showData(category: EventM)
+    func spinnerLoadingState(state: Bool)
 }
 
 class SuggestViewController: UIViewController {
@@ -27,6 +28,7 @@ class SuggestViewController: UIViewController {
         super.viewDidLoad()
         self.viewModel = SuggestViewModel(service: service, delegate: self)
         self.viewModel?.loadData()
+        spinnerLoadingState(state: true)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -51,6 +53,13 @@ extension SuggestViewController: SuggestDelegate {
             self.price.text = self.viewModel?.getPrice(price: (self.viewModel?.testActivity?.price)!)
             self.participantsNumber.text = String(self.participants)
         }
-
+    }
+    
+    func spinnerLoadingState(state: Bool) {
+        if state == true {
+            return self.showSpinner(onView: self.view)
+        } else {
+            return self.removeSpinner()
+        }
     }
 }
