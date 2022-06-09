@@ -17,8 +17,6 @@ final class EventProvider {
     
     func getInfoActivities(_ completion: @escaping (Result<EventM, Error>) -> Void) {
         
-        
-        
         let urlCase: String = getUrl()
         
         guard let url: URL = URL(string: urlCase) else {
@@ -32,7 +30,6 @@ final class EventProvider {
         
         let task: URLSessionDataTask = session.dataTask(with: request) { (data, _, error) in
             guard error == nil, let dataModel = data else {
-//                preconditionFailure("Task error \(error?.localizedDescription ?? "")")
                 if let error = error {
                     completion(.failure(error))
                 } else {
@@ -44,14 +41,10 @@ final class EventProvider {
                 
                 let decoder: JSONDecoder = JSONDecoder()
                 let activity: EventM = try decoder.decode(EventM.self, from: dataModel)
-                print(activity.activity)
-                print(activity.price)
                 return completion(.success(activity))
                 
             } catch {
                 completion(.failure(error))
-//                preconditionFailure(error.localizedDescription)
-                
             }
         }
         task.resume()

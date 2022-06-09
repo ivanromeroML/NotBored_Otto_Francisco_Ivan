@@ -8,16 +8,18 @@
 import UIKit
 
 class ActivitiesViewController: UIViewController {
-
+    
+    //Outlets
     @IBOutlet weak var tableView: UITableView!
-
+    
+    //Variables
     private var viewModel = ActivitiesViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableview()
     }
-    	
+    
     func setupTableview(){
         self.tableView.dataSource = self
         self.tableView.delegate = self

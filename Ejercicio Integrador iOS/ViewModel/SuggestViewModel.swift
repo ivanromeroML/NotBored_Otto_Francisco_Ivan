@@ -27,7 +27,7 @@ class SuggestViewModel{
                     self.testActivity = resultActivity
                     self.delegate.showData()
                     self.delegate.spinnerLoadingState(state: false)
-                case .failure(let error):
+                case .failure(_):
                     self.delegate.showData()
                     self.delegate.spinnerLoadingState(state: false)
                 }

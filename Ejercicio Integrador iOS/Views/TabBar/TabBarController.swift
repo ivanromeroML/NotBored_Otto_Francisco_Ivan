@@ -8,7 +8,7 @@
 import UIKit
 
 class TabBarController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let activitiesNavigationController = addView(tabTitle: "Activities", tabImageName: "list.dash", viewController: ActivitiesViewController.self)
@@ -21,15 +21,15 @@ class TabBarController: UITabBarController {
         let nibName = viewController.description().components(separatedBy: ".").last
         
         let vc = viewController.init(nibName: nibName, bundle: nil)
-
+        
         vc.title = tabTitle
         vc.tabBarItem = UITabBarItem(title: tabTitle, image: UIImage(systemName: tabImageName), selectedImage: nil)
-
+        
         let navigationController = UINavigationController(rootViewController: vc)
         navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 30, weight: UIFont.Weight.bold)]
-
+        
         return navigationController
-
+        
     }
-
+    
 }
