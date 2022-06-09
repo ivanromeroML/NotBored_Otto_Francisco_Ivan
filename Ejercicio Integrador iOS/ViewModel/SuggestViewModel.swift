@@ -9,10 +9,22 @@ import Foundation
 
 class SuggestViewModel{
     let delegate: SuggestDelegate
+    let service: EventProvider
+    var testActivity: EventM?
     
     init (service: EventProvider, delegate: SuggestDelegate) {
+        self.service = service
         self.delegate = delegate
     }
+    
+    //MARK: Data
+    func loadData(){
+        service.getInfoActivities { activity in
+            self.testActivity = activity
+            self.delegate.showData(category: activity)
+            }
+    }
+    
     
     //MARK: Price
      func getPrice(price: Double) -> String {

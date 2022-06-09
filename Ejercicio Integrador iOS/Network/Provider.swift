@@ -31,7 +31,7 @@ final class EventProvider {
                 
                 let decoder: JSONDecoder = JSONDecoder()
                 let activity: EventM = try decoder.decode(EventM.self, from: dataModel)
-                print(activity.type)
+                print(activity.activity)
                 print(activity.accessibility)
                 return completion(activity)
                 
@@ -51,9 +51,9 @@ final class EventProvider {
         case (.some(let participants), .none):
             return "http://www.boredapi.com/api/activity?participants=\(participants)"
         case (.none, .some(let activity)):
-            return "http://www.boredapi.com/api/activity?type=\(activity)"
+            return "http://www.boredapi.com/api/activity?type=\(activity.lowercased())"
         case (.some(let participants), .some(let activity)):
-            return "http://www.boredapi.com/api/activity?type=\(activity)&participants=\(participants)"
+            return "http://www.boredapi.com/api/activity?type=\(activity.lowercased())&participants=\(participants)"
         }
     }
 }
