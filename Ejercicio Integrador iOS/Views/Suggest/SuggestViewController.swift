@@ -44,6 +44,7 @@ class SuggestViewController: UIViewController {
     }
     
     @IBAction func tryAnotherButton(_ sender: Any) {
+        spinnerLoadingState(state: true)
         self.viewModel?.loadData()
     }
 }
